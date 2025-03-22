@@ -1,6 +1,6 @@
 # Evergreen
 
-Keep that git contribution chart ever green
+Keep that git contribution chart evergreen
 
 A Lambda function that makes meaningless GitHub commits to keep your contribution graph green 🌱
 

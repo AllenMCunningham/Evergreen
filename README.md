@@ -4,6 +4,13 @@ Keep that git contribution chart evergreen
 
 A Lambda function that makes meaningless GitHub commits to keep your contribution graph green 🌱
 
+```mermaid
+graph TD
+    Secret[Secrets Manager: GitHubSecrets] --> Lambda[Lambda: evergreen-committer]
+    Role[IAM Role: LambdaExecutionRole] --> Lambda
+    Rule[CloudWatch Rule: Cron Trigger] --> Lambda
+    Lambda --> Repo[GitHub Repo: user/target_repo]
+```
 ## Setup
 
 ### 1. Requirements

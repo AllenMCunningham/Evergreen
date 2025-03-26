@@ -1,15 +1,15 @@
 import os
 import boto3
-import base64
 import subprocess
 import shutil
 from datetime import datetime
 import random
+import json
 
 def get_secret(secret_name):
     client = boto3.client("secretsmanager")
     response = client.get_secret_value(SecretId=secret_name)
-    return eval(response["SecretString"])
+    return json.loads(response["SecretString"])
 
 def add_and_commit(message):
     subprocess.run(["git", "add", "."], check=True)
